@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState ,useRef} from 'react'
 import Header from './Header'
-
+import {validateFields} from "../utility/validation"
 
 
 const Login = () => {
   const[isNewUser,setNewUser]=useState(true);
+  const[errorMessage,setErrorMessage]=useState("")
+
+
+  const email=useRef(null);
+  const password=useRef(null)
+
   const handleSignup=()=>{
     setNewUser(!isNewUser);
 
@@ -13,7 +19,19 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Submit the form data here
+
   };
+
+  const handleButtonClick=()=>{
+    console.log(email.current.value)
+    console.log(password.current.value)
+
+   const error= validateFields(email.current.value,password.current.value)
+   console.log()
+   setErrorMessage(error)
+  }
+
+  
   
   return (
     <div>
@@ -27,9 +45,12 @@ const Login = () => {
             <h1 className='text-bold-3xl py-4 text-white font-bold text-2xl'>{isNewUser?"Log In":"SignUp"}</h1>
           { !isNewUser && <input type="text" placeholder='UserName' className='p-2 m-2 bg-gray-600 rounded-lg' />}
 
-            <input type="text" placeholder='Email' className='p-2 m-2 bg-gray-600 rounded-lg' />
-            <input type="password" placeholder='Password' className='p-2 m-2 bg-gray-600 rounded-lg' />
-            <button className='p-2 m-2  text-white rounded-lg' style={{background:"rgb(193, 17, 25)"}}>{isNewUser?"Log In":"Sign Up "}</button>
+            <input ref={email} type="text" placeholder='Email' className='p-2 m-2 bg-gray-600 rounded-lg' />
+            <p className='text-[red] pl-3 '>{errorMessage==="Email Id is not correct " ?"Email Id is not correct":""}</p>
+            <input ref={password} type="password" placeholder='Password' className='p-2 m-2 bg-gray-600 rounded-lg' />
+            <p className='text-[red] pl-3 '>{errorMessage==="Password is not correct" ?"Password is not correct":""}</p>
+
+            <button onClick={handleButtonClick} className='p-2 m-2  text-white rounded-lg' style={{background:"rgb(193, 17, 25)"}}>{isNewUser?"Log In":"Sign Up "}</button>
             <p className='text-white'>New to Netflix ? <button onClick={handleSignup}>{isNewUser?"Sign Up Now":"Log In"}</button></p>
 
         </form>
