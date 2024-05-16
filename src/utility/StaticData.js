@@ -16,4 +16,6 @@ export const options = {
   };
 
 
+  export const SUPPORTED_LANG=[{identifier:"English",name:"English"},{identifier:"Hindi",name:"Hindi"}]
+
   

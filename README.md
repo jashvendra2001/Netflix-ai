@@ -74,3 +74,10 @@ login sign up complete
 we can navigate one page to another using navigate function 
 usedispatch hook is used for modify initialstate of the store 
 
+
+1.create slice form toggle button  it is chatGPT search 
+2.create two components one is for SearchBar and second is moviesBar
+3.toggle the components is possible .
+4.Design the chatgpt search page it will .
+5.today i will complete this web app this is important and add this in my resume my next project is realestate website with admine panel this is a project which will give me 6lpa which is my desire now how can i got it noe 
+

@@ -93,7 +93,7 @@ signInWithEmailAndPassword(auth, emailValue, passwordValue)
     <div>
       <Header  logIn={isNewUser} />
       <div className='absolute'>
-        <img className='z-1 h-[100vh]  object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/4d7bb476-6d8b-4c49-a8c3-7739fddd135c/deecf71d-7a47-4739-9e1a-31b6b0d55be7/IN-en-20240429-popsignuptwoweeks-perspective_alpha_website_medium.jpg" alt="" />
+        <img className='z-1 h-[100vh] md:h-auto   object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/4d7bb476-6d8b-4c49-a8c3-7739fddd135c/deecf71d-7a47-4739-9e1a-31b6b0d55be7/IN-en-20240429-popsignuptwoweeks-perspective_alpha_website_medium.jpg" alt="" />
       </div>
 
       <div className="form flex justify-center">
